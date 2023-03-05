@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/index.css" />
-    <title>Prediction Form</title>
-  </head>
-  <body>
-    <header class="main-header">
-      <h1>Enter a number to make a prediction</h1>
-    </header>
-    <main>
-      <form action="/predict" class="prediction-form" method="POST">
-        <fieldset>
-          <legend>Make a Prediction</legend>
-          <div class="form-control">
-            <label for="inputValue">Enter a Number</label>
-            <input type="number" id="inputValue" name="inputValue" />
-          </div>
-          <button class="btn" type="submit">Make Prediction</button>
-        </fieldset>
-      </form>
-    </main>
-  </body>
-</html>
+<%- include('head.ejs') %>
+<body>
+  <header class="main-header">
+    <h1>Enter a number to make a prediction</h1>
+  </header>
+  <main>
+    <form action="/predict" class="prediction-form" method="POST">
+      <fieldset>
+        <legend>Make a Prediction</legend>
+        <div class="form-control">
+          <label for="inputValue">Enter a Number</label>
+          <input type="number" id="inputValue" name="inputValue" />
+        </div>
+        <button class="btn" type="submit">Make Prediction</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+<%- include('foot.ejs') %>

@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const tf = require('@tensorflow/tfjs')
-const { urlencoded } = require('express')
 
 const app = express()
 
@@ -12,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async (req, res, next) => {
-  res.render('form')
+  res.render('form', { title: 'Prediction Form' })
 })
 
 app.post('/predict', async (req, res, next) => {
@@ -37,7 +36,7 @@ app.post('/predict', async (req, res, next) => {
     .dataSync()[0]
     .toPrecision(5)
 
-  res.render('prediction', { prediction })
+  res.render('prediction', { prediction, title: 'Result Page' })
 })
 
 app.listen(3000, () => console.log('Server Running on port 3000'))
